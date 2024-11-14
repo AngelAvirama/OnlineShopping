@@ -206,25 +206,23 @@ session_start();
 
 								<!-- Cart -->
 								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<a class="dropdown-toggle" aria-expanded="true">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Your Cart</span>
 										<div class="badge qty">0</div>
 									</a>
-									<div class="cart-dropdown"  >
+									<div class="cart-dropdown">
 										<div class="cart-list" id="cart_product">
-										
-											
+											<!-- Productos del carrito -->
 										</div>
 										
 										<div class="cart-btns">
-												<a href="cart.php" style="width:100%;"><i class="fa fa-edit"></i>  edit cart</a>
-											
+											<a style="width:100%;"><i class="fa fa-edit"></i> edit cart</a>
 										</div>
 									</div>
-										
-									</div>
+								</div>
 								<!-- /Cart -->
+
 
 								<!-- Menu Toogle -->
 								<div class="menu-toggle">
