@@ -42,7 +42,7 @@ include "topheader.php";
                 <div class="card-body">
                     <div class="table-responsive ps">
                         <table class="table tablesorter" id="page1">
-                            <thead class=" text-primary">
+                            <thead class="text-primary">
                                 <tr>
                                     <th>Image</th>
                                     <th>Name</th>
@@ -55,11 +55,15 @@ include "topheader.php";
                                 // Obtener lista de productos
                                 $result = mysqli_query($con, "SELECT product_id, product_image, product_title, product_price FROM products WHERE product_cat=2 OR product_cat=3 OR product_cat=4 LIMIT $page1, 12") or die("Query 1 incorrect...");
                                 while (list($product_id, $image, $product_name, $price) = mysqli_fetch_array($result)) {
-                                    echo "<tr><td><img src='../product_images/$image' style='width:50px; height:50px; border:groove #000'></td><td>$product_name</td><td>$price</td>
-                                          <td>
-                                              <a class='btn btn-success' href='editproduct.php?product_id=$product_id'>Edit</a>
-                                              <a class='btn btn-danger' href='productlist.php?product_id=$product_id&action=delete'>Delete</a>
-                                          </td></tr>";
+                                    echo "<tr>
+                                            <td><img src='../product_images/$image' style='width:50px; height:50px; border:groove #000'></td>
+                                            <td>$product_name</td>
+                                            <td>$price</td>
+                                            <td>
+                                                <a class='btn btn-success' href='editproduct.php?product_id=$product_id'>Edit</a>
+                                                <a class='btn btn-danger' href='#' onclick='confirmDelete($product_id)'>Delete</a>
+                                            </td>
+                                          </tr>";
                                 }
                                 ?>
                             </tbody>
@@ -97,6 +101,15 @@ include "topheader.php";
         </div>
     </div>
 </div>
+
+<!-- Confirmación de eliminación -->
+<script>
+function confirmDelete(productId) {
+    if (confirm("Are you sure you want to delete this product? This action cannot be undone.")) {
+        window.location.href = "productlist.php?product_id=" + productId + "&action=delete";
+    }
+}
+</script>
 
 <?php
 include "footer.php";
