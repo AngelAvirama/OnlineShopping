@@ -6,7 +6,7 @@ $password = "";
 $db = "ecommerce";
 
 // Create connection
-$con = mysqli_connect($servername, $username, $password,$db);
+$con = mysqli_connect("junction.proxy.rlwy.net", "root", "FfFyRiqELnqQgTLrwuHgMoSJEdcpLdRB", "railway", 46497);
 
 // Check connection
 if (!$con) {
